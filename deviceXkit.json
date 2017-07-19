@@ -1,0 +1,158 @@
+{
+  "urn": "urn:thinxtra:sigfox:device:xkit",
+  "name": "Thinxtra Sigfox XKit",
+  "description": "Thinxtra Sigfox XKit",
+  "attributes": [
+    {
+      "description": "Event timestamp (in seconds since the Unix Epoch)",
+      "name": "time",
+      "type": "DATETIME",
+      "writable": true
+    },
+    {
+      "description": "Device ID",
+      "name": "device",
+      "type": "STRING",
+      "writable": true
+    },
+    {
+      "description": "True: If the message is a duplicate one, meaning that the backend has already processed this message from a different base station",
+      "name": "duplicate",
+      "type": "BOOLEAN",
+      "writable": true
+    },
+    {
+      "description": "Signal to noise ratio",
+      "name": "snr",
+      "type": "NUMBER",
+      "writable": true
+    },
+    {
+      "description": "the RSSI (in dBm – Float value with two maximum fraction digits). If there is no data to be returned, then the value is null.",
+      "name": "rssi",
+      "type": "NUMBER",
+      "writable": true
+    },
+    {
+      "description": "Average signal to noise ratio computed from the last 25 messages",
+      "name": "avgSnr",
+      "type": "NUMBER",
+      "writable": true
+    },
+    {
+      "description": "Base station identifier",
+      "name": "station",
+      "type": "STRING",
+      "writable": true
+    },
+    {
+      "description": "Latitude",
+      "name": "lat",
+      "type": "NUMBER",
+      "writable": true
+    },
+    {
+      "description": "Longitude",
+      "name": "lon",
+      "type": "NUMBER",
+      "writable": true
+    },
+    {
+      "description": "Sequence number of the message if available",
+      "name": "seqNumber",
+      "type": "NUMBER",
+      "writable": true
+    }
+  ],
+  "formats": [
+    {
+      "urn": "urn:thinxtra:sigfox:device:xkit:data",
+      "name": "data",
+      "description": "Thinxtra Sigfox XKit Data",
+      "type": "DATA",
+      "deviceModel": "urn:thinxtra:sigfox:device:xkit",
+      "value": {
+        "fields": [
+          {
+            "name": "temperature",
+            "optional": false,
+            "type": "NUMBER"
+          },
+          {
+            "name": "pressure",
+            "optional": false,
+            "type": "NUMBER"
+          },
+          {
+            "name": "photo",
+            "optional": false,
+            "type": "NUMBER"
+          },
+          {
+            "name": "x_accelerator",
+            "optional": false,
+            "type": "NUMBER"
+          },
+          {
+            "name": "y_accelerator",
+            "optional": false,
+            "type": "NUMBER"
+          },
+          {
+            "name": "z_accelerator",
+            "optional": false,
+            "type": "NUMBER"
+          }
+        ]
+      },
+      "sourceId": "urn:thinxtra:sigfox:device:xkit",
+      "sourceType": "DEVICE_MODEL"
+    },
+    {
+      "urn": "urn:thinxtra:sigfox:device:xkit:service:status",
+      "name": "service",
+      "description": "This type defines the reception of an operational message from a device.",
+      "type": "DATA",
+      "deviceModel": "urn:thinxtra:sigfox:device:xkit",
+      "value": {
+        "fields": [
+          {
+            "name": "batt",
+            "optional": false,
+            "type": "NUMBER"
+          },
+          {
+            "name": "temp",
+            "optional": false,
+            "type": "NUMBER"
+          }
+        ]
+      },
+      "sourceId": "urn:thinxtra:sigfox:device:xkit",
+      "sourceType": "DEVICE_MODEL"
+    },
+    {
+      "urn": "urn:thinxtra:sigfox:device:xkit:error",
+      "name": "error",
+      "description": "This type defines the communication loss for a device.",
+      "type": "ALERT",
+      "deviceModel": "urn:thinxtra:sigfox:device:xkit",
+      "value": {
+        "fields": [
+          {
+            "name": "info",
+            "optional": false,
+            "type": "STRING"
+          },
+          {
+            "name": "severity",
+            "optional": false,
+            "type": "STRING"
+          }
+        ]
+      },
+      "sourceId": "urn:thinxtra:sigfox:device:xkit",
+      "sourceType": "DEVICE_MODEL"
+    }
+  ]
+}

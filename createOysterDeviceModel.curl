@@ -1,0 +1,1 @@
+curl -X POST -u <MyUsername>:<MyPassword> -H 'Content-Type: application/json' -d '@deviceOyster.json' http://<MyIoTUrl>/iot/api/v2/deviceModels/
