@@ -1,0 +1,25 @@
+Custom Payload Config:
+temperature::uint:16:little-endian pressure::uint:16:little-endian photo::uint:16:little-endian x_acc::int:16:little-endian y_acc::int:16:little-endian z_acc::int:16:little-endian
+
+Content Type: application/json
+
+Body:
+{
+"time" : "{time}",
+"device" : "{device}",
+"duplicate": "{duplicate}",
+"snr": "{snr}",
+"rssi":"{rssi}",
+"avgSnr":"{avgSnr}",
+"station":"{station}",
+"lat":"{lat}",
+"lon":"{lng}",
+"seqNumber":"{seqNumber}",
+"temperature" : "{customData#temperature}",
+"pressure" : "{customData#pressure}",
+"photo" : "{customData#photo}",
+"x_accelerator" : "{customData#x_acc}",
+"y_accelerator" : "{customData#y_acc}",
+"z_accelerator" : "{customData#z_acc}"
+}
+
