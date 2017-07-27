@@ -1,5 +1,5 @@
 Custom Payload Config:
-messageType::uint:8:little-endian lat::int:32:little-endian lon::int:32:little-endian heading::int:8:little-endian speed::int:8:little-endian battery::uint:8:little-endian
+messageType::uint:8:little-endian lat::int:32:little-endian lon::int:32:little-endian heading::uint:8 speed::uint:8 battery::uint:8
 
 Content Type: application/json
 
